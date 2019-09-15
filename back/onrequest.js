@@ -1,6 +1,7 @@
 module.exports = (req, resp) => {
   const end = resp.end.bind(resp), 
-        head = headers => resp.writeHead(200, headers), 
+        head = headers => resp.writeHead(200, headers),
+        type = val => head({'Content-Type': val}), 
       { url } = req
 
   say("Handling request: "+url)
@@ -12,7 +13,8 @@ module.exports = (req, resp) => {
   {
     try { 
       const content = file('front'+url)
-      if (url.endsWith('.css')) head({'Content-Type': 'text/css'})
+      if (url.endsWith('.css')) type('text/css')
+      if (url.endsWith('.js')) type('text/javascript')
       end(content) 
     } 
     catch { end('Sorry, '+url+' route unhandled or file not found, '
