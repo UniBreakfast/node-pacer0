@@ -4,11 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hello World!</title>
+  <title>Pacer Game</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello World!</h1>
-  <script src="script.js"></script>
+  <div id="auth" data-xywh="200,100,300,200">
+    <h3>Регистрация / Вход</h3>
+    <div></div>
+  </div>
+
+  <script>
+    xywh = ['left','top','width','height']
+    document.querySelectorAll('[data-xywh]')
+      .forEach(el => Object.assign(el.style, el.dataset.xywh.split(',')
+        .reduce((style, value, i) => ({...style, [xywh[i]]:value+'px'}), 
+          {position: 'absolute'})))
+  </script>
+  <script src="face-the-void/the-void.js"></script>
+  <script src="face-the-void/faces.js"></script>
+  <link rel="stylesheet" href="face-the-void/the-void.css">
+  <link rel="stylesheet" href="face-the-void/faces.css">
+  <script type="module" src="script.js"></script>
 </body>
 </html>

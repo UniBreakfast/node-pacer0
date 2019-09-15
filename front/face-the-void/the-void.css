@@ -1,0 +1,12 @@
+.void {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: #333;
+  overflow: auto;
+  box-sizing: border-box;
+}
+.void::-webkit-scrollbar { width: 4px; height:  4px }
+.void::-webkit-scrollbar-corner,
+.void::-webkit-scrollbar-track { background: #0000 }
+.void::-webkit-scrollbar-thumb { background: #777; border-radius: 80% }

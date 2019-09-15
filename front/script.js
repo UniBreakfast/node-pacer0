@@ -1,6 +1,7 @@
-say = console.log
+const say = console.log
 
-Object.defineProperty(window, 'now', 
-  { get: ()=> String(new Date).match(/\d+:\d+:\d+/)[0] } )
+evolveArr([...document.body.children])
+
+import nothing from "./component.js";
 
 say('Page loaded at '+ now)
