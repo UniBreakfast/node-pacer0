@@ -1,22 +1,27 @@
-Object.defineProperty(global, 'now', 
-  { get: ()=> String(new Date).match(/\d+:\d+:\d+/)[0] } )
-  
-log = (...args) => console.log(now, ...args) || args[args.length-1]
+dir = __dirname+'/'
 
-String.prototype.wo = function(piece) { return this.replace(piece, '') }
+require('./back/funcback')
 
-use = module => setTimeout( ()=> {
-  try { delete require.cache[require.resolve(module)] } catch {}
-} , 0) && require(module)
+imp(true, 'fs', 'http', 'mongodb')
 
-imp = (...what) => what.map(name => 
-  global[name.replace(/.*\/(?=\w+$)/, '')] = require(name))
-
-imp('fs', 'http')
+// setInterval(()=>{
+//   try {
+//     mongodb.MongoClient.connect(process.env.MONGO_URI, 
+//       {useNewUrlParser: true, useUnifiedTopology: true}, (err, cluster)=> {
+//         if (err) return log('hmm...', err)
+//         cluster.db('node-pacer0').collection('endeavors')
+//           .insertOne({now}, (err, result)=> log(err, result, '.'))
+//         cluster.close()
+//       })
+//   } catch (err) {log(err)}
+// }, 7e6)
 
 file = fs.readFileSync
 
 port = process.env.PORT || 3000
 
-http.createServer( (...both) => use('./back/onrequest')(...both))
-  .listen(port, ()=> log('Server started to listen port '+port))
+dev = !process.env.PORT
+imp(!dev, './back/onrequest')
+
+http.createServer(onrequest).listen(port, 
+  ()=> log('Server started to listen on port '+port))

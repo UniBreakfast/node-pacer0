@@ -1,10 +1,15 @@
-module.exports = (req, resp) => {
-  const end = resp.end.bind(resp),
-    head = headers => resp.writeHead(200, headers),
-    type = val => head({ 'Content-Type': val }),
-    { url } = req
+if (dev) use('./back/funcback')
 
-  log("Handling request: " + url)
+module.exports = (req, resp) => {
+
+  const head = headers => resp.writeHead(200, headers),
+        end = by => 
+          typeof by == 'string' || by instanceof Buffer? 
+          resp.end(by) : ( head({body: JSON.stringify(by)}), end('') ),
+        type = val => head({ 'Content-Type': val }),
+      { url } = req
+
+  log("-Handling request: " + url)
 
   try {
 
