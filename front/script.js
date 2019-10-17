@@ -1,10 +1,5 @@
-window.say = console.log
 
-evolveArr([...document.body.children])
-
-import nothing from "./component.js";
-
-say('Page loaded at '+ now)
+log('Page loaded')
 
 window.api = (route, body, cb=x=>x) => fetch('/api/'+route, 
   {method: 'POST', headers: {body: JSON.stringify(body)}})

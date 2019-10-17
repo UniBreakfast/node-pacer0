@@ -8,21 +8,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="records" data-xywh="200,100,300,200">
-    <input type="text" id="newRec">
-  </div>
-
-  <script>
-    xywh = ['left','top','width','height']
-    document.querySelectorAll('[data-xywh]')
-      .forEach(el => Object.assign(el.style, el.dataset.xywh.split(',')
-        .reduce((style, value, i) => ({...style, [xywh[i]]:value+'px'}), 
-          {position: 'absolute'})))
-  </script>
-  <script src="face-the-void/the-void.js"></script>
-  <script src="face-the-void/faces.js"></script>
-  <link rel="stylesheet" href="face-the-void/the-void.css">
-  <link rel="stylesheet" href="face-the-void/faces.css">
-  <script type="module" src="script.js"></script>
+  <h2>Привет! Мы несказанно рады твоему визиту.</h2>
+  <p>Text</p>
+  <button>Button</button>
+  <input type="text" value="Input">
+  <script src="funcboth.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

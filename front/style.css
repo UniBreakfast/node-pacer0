@@ -1,1 +1,7 @@
-body { background: cornsilk }
+body, input, button { font: bold 1rem Trebuchet MS, Helvetica, Arial, sans-serif }
+
+body { 
+  background: #ffc;
+
+}
+
