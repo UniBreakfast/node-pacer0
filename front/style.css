@@ -10,6 +10,7 @@ body { margin: 0; padding: 6px 10px;
 button, input, textarea {
   margin: 3px; padding: 2px 6px;
   border: 3px solid #221; border-radius: 6px;
+  box-sizing: border-box;
   vertical-align: bottom; resize: none;
   transition: all .2s;
   outline: 4px dotted #0000; outline-offset: 5px;
@@ -21,3 +22,11 @@ button:focus, input:focus, textarea:focus {
 button { background: #221; color: #fff }
 button:hover { box-shadow: 0 0 8px 1px #f60 }
 button:active { box-shadow: 0 0 13px 6px #f60 }
+
+::-webkit-scrollbar { width: 8px; height: 8px }
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-track { background: #0000 }
+::-webkit-scrollbar-thumb { background: #221; 
+  border: 1px solid #fff; border-radius: 4px }
+
+.wide { display: block; width: 100% }
