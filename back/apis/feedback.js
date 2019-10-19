@@ -5,5 +5,5 @@ module.exports = (req, body, resp, end, url) => {
       return end(body)
   }
 
-  throw ''
+  // throw ''
 }
