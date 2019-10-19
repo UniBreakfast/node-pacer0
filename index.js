@@ -3,7 +3,8 @@ dir = __dirname+'/'
 
 require('./back/funcback')
 
-imp(true, 'fs', 'http', 'mongodb', './front/funcboth')
+imp(true, 'fs', 'http', 'mongodb')
+imp(false, './front/funcboth')
 
 
 file = fs.readFileSync
