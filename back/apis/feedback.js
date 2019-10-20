@@ -1,9 +1,9 @@
 module.exports = async (req, body, resp, end, url) => {
+  fbColl = db.collection('feedbacks')
 
   switch (url) {
-    case 'give':
-      await db.collection('feedbacks').insertOne(body)
-      return end({ok: {}})
+    case 'give': return await fbColl.insertOne(body), end({ok: {}})
+    case 'get': return end(await fbColl.find().toArray())
   }
 
 }
