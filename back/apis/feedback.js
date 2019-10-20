@@ -1,9 +1,9 @@
-module.exports = (req, body, resp, end, url) => {
+module.exports = async (req, body, resp, end, url) => {
 
   switch (url) {
     case 'give':
-      return end(body)
+      await db.collection('feedbacks').insertOne(body)
+      return end({ok: {}})
   }
 
-  // throw ''
 }

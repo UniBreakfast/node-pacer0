@@ -16,4 +16,11 @@ imp(!dev, './back/onrequest')
 
 
 http.createServer(onrequest).listen(port, 
-  ()=> log('Server started to listen on port '+port))
+  ()=> log('Server started to listen on port '+port));
+
+
+mongolink = process.env.mongolink || require('./back/mongolink');
+
+(new mongodb.MongoClient(mongolink, {useNewUrlParser: true, useUnifiedTopology: true}))
+  .connect((err, cluster)=> err? log(err)
+    : (db = cluster.db('node-pacer0')) && log('Connected to MongoDB'))

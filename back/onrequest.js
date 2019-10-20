@@ -1,6 +1,6 @@
 if (dev) use('./back/funcback')
 
-module.exports = (req, resp) => {
+module.exports = async (req, resp) => {
 
   const head = headers => resp.writeHead(200, headers),
         end = by => typeof by == 'string' || by instanceof Buffer? 
@@ -13,7 +13,7 @@ module.exports = (req, resp) => {
   try {
 
     if (url.startsWith('api/')) 
-      return use('./back/api')(req, resp, end, url.wo('api/'))
+      return await use('./back/api')(req, resp, end, url.wo('api/'))
 
     {
       const content = file('front/' + (url || 'index.html'))
