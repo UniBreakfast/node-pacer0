@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <title>Feedback</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    td { position: relative }
+    .author { position: absolute; top: 3px; right: 10px }
+  </style>
 </head>
 
 <body>
@@ -12,7 +16,7 @@
     <tbody class="renderable inner-grid" data-src="feedbacks" id="fbTable">
       <template>
         <tr id={_id} class="{and.pale}"> 
-          <td>{i}</td> <td><h3>{title}</h3><p>{msg}</p></td>
+          <td>{i}</td> <td><h3>{title}</h3><p>{msg}</p><span class="author">{author}</span></td>
           <td><input type="checkbox" {and.check}></td>
         </tr>
       </template>

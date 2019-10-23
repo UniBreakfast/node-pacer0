@@ -5,6 +5,11 @@
   <meta charset="UTF-8">
   <title>Pacer Game</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    @media screen and (min-width: 620px) {
+      .wide { width: 600px; margin-left: auto; margin-right: auto; }
+    }
+  </style>
 </head>
 
 <body>
@@ -12,6 +17,7 @@
     <h2 class="center">Спасибо, что зашли на наш сайт/в приложение!</h2>
     <textarea id=msg class="wide" rows=7 placeholder="Дайте пожалуйста обратную связь по поводу этого сайта/приложения: Что понравилось/не понравилось, что добавить/убрать, что, возможно, стоит сделать иначе. Возможно, вы нашли ошибки или неточности, или же просто не хватает функционала - пишите нам об этом, и мы постараемся исправить ситуацию!"></textarea>
     <input id=title class="wide" placeholder="То же, что выше, но в нескольких словах - для заголовка сообщения">
+    <input id=author class="wide" placeholder="Кто вы (хоть род занятий)? Если не хотите, можете не представляться">
     <div id=submit class="center"><button>Отправить</button></div>
   </form>
   <script src="funcboth.js"></script>
