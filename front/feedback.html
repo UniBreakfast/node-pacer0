@@ -11,9 +11,9 @@
   <table class="center">
     <tbody class="renderable inner-grid" data-src="feedbacks" id="fbTable">
       <template>
-        <tr id={_id}> 
+        <tr id={_id} class="{and.pale}"> 
           <td>{i}</td> <td><h3>{title}</h3><p>{msg}</p></td>
-          <td><input type="checkbox"{check}></td>
+          <td><input type="checkbox" {and.check}></td>
         </tr>
       </template>
     </tbody>
@@ -22,7 +22,7 @@
   <script src="funcboth.js"></script>
   <script src="frontfunc.js"></script>
   <script src="able.js"></script>
-  <script src="fetchfb.js"></script>
+  <script src="feedbacks.js"></script>
 </body>
 
 </html>
