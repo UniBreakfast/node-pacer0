@@ -51,7 +51,7 @@ addEventListener('load', () => {
 
       area.innerHTML = placeValues.reduce((html, dic) => html + 
         Object.entries(dic).reduce((html, [holder, value]) => 
-          html.split(holder).join(value), template), '')
+          html.split(holder).join(value || ''), template), '')
 
       callbacks.forEach(callback => callback())
     })()

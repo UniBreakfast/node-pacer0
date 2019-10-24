@@ -1,0 +1,17 @@
+
+
+
+
+
+data entity view-control:
+
+  - list of entity representing objects in the database
+  - CRUD-functions to query database operations on them
+  - backend data validation
+  - backend API to pass respective data
+  - frontend function to call backend API with data passed
+  - frontend precall validation
+  - frontend entity data-cache
+  - frontend entity representing DOM-widgets
+  - table widgets with multiple selection classes, sorting, handlers
+  - autorefreshing
