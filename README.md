@@ -1,5 +1,4 @@
-# node-pacer0
-
+# [node-pacer0](https://github.com/UniBreakfast/node-pacer0)
 ## Nowhere near the real PacerGame project, newermind the title
 
 back/mongolink.js is here https://gist.github.com/UniBreakfast/secret
