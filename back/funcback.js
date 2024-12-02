@@ -1,6 +1,4 @@
-
 String.prototype.wo = function(piece) { return this.replace(piece, '') }
-
 
 use = module => {
   if (module[0]=='.') module = dir+module

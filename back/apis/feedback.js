@@ -7,5 +7,4 @@ module.exports = async (req, body, resp, end, url) => {
     case 'check': return await fbColl.updateOne({_id: body.id}, {$set: {check: body.check}} ), 
       end({ok: {}})
   }
-
 }
