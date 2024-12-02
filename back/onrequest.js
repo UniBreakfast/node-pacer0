@@ -11,7 +11,9 @@ module.exports = async (req, resp) => {
 
   try {
     if (url.startsWith('api/')) 
-      return await use('./back/api')(req, resp, end, url.wo('api/')) {
+      return await use('./back/api')(req, resp, end, url.wo('api/')) 
+    
+    {
       if (!url.includes('.')) url = (url || 'index')+'.html'
       const content = file('front/'+url)
       if (url.endsWith('.css')) type('text/css')
